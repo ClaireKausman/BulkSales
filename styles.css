@@ -49,3 +49,7 @@ footer { color: var(--muted); margin-top: 18px; font-size: 0.9rem; }
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 14px;
 }
+.card { max-width: 780px; margin: 0 auto; }
+
+.card .media { height: 220px; }
+.card .media img { max-width: 100%; max-height: 100%; object-fit: contain; }
