@@ -1,0 +1,45 @@
+{
+  "types": [
+    {
+      "type": "Cables & Chargers",
+      "file": "data/Cables-Chargers.csv",
+      "count": 497
+    },
+    {
+      "type": "Home Products",
+      "file": "data/Home-Products.csv",
+      "count": 178
+    },
+    {
+      "type": "Other Accessories",
+      "file": "data/Other-Accessories.csv",
+      "count": 184
+    },
+    {
+      "type": "PC Accessories",
+      "file": "data/PC-Accessories.csv",
+      "count": 95
+    },
+    {
+      "type": "Pet Products",
+      "file": "data/Pet-Products.csv",
+      "count": 142
+    },
+    {
+      "type": "Phone Case",
+      "file": "data/Phone-Case.csv",
+      "count": 3805
+    },
+    {
+      "type": "Tempered Glass",
+      "file": "data/Tempered-Glass.csv",
+      "count": 710
+    },
+    {
+      "type": "Watch Accessories",
+      "file": "data/Watch-Accessories.csv",
+      "count": 691
+    }
+  ],
+  "generated_from": "clearanceBulk.xlsx"
+}

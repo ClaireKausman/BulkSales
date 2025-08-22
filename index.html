@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Product Menu</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Product Menu</h1>
+      <div class="controls">
+        <input id="search" type="search" placeholder="Search SKU / Title / Brand / Variant"/>
+        <span id="count" class="badge">0 items</span>
+      </div>
+    </header>
+
+    <div id="tabs" class="tabs"></div>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th style="width:110px">Image</th>
+          <th>SKU</th>
+          <th>Title</th>
+          <th>Brand</th>
+          <th>Variant</th>
+          <th>Retailing</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+      <tfoot>
+        <tr><td colspan="7"><span id="activeType" class="badge"></span></td></tr>
+      </tfoot>
+    </table>
+
+    <footer>
+      Data loaded from preprocessed CSVs. First image is taken from the <em>IMAGES</em> column (split by <code>|</code>).
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
