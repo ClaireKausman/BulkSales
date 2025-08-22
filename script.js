@@ -39,34 +39,15 @@
     return String(v);
   }
 
-  function renderRows(rows) {
-    tbody.innerHTML = '';
+  function render(rows) {
+    grid.innerHTML = '';
     const q = (searchEl.value || '').trim().toLowerCase();
     let shown = 0;
     for (const row of rows) {
-      const sku = row['PRODUCT_SKU'] ?? '';
-      const title = row['PRODUCT_TITLE'] ?? '';
-      const brand = row['BRAND'] ?? '';
-      const variant = row['variant_facet_value'] ?? '';
-      const retailing = row['Retailing'] ?? '';
-      const price = row['Price'] ?? '';
-      const imgURL = firstImage(row['IMAGES']);
-
-      const textBlob = `${sku} ${title} ${brand} ${variant}`.toLowerCase();
+      const textBlob = `${row['PRODUCT_SKU'] ?? ''} ${row['PRODUCT_TITLE'] ?? ''} ${row['BRAND'] ?? ''} ${row['variant_facet_value'] ?? ''}`.toLowerCase();
       if (q && !textBlob.includes(q)) continue;
 
-      const tr = el('tr', { class: 'row' }, [
-        el('td', { class: 'cell-image' }, [
-          imgURL ? el('img', { src: imgURL, alt: title || 'image', loading: 'lazy' }) : el('span', { class: 'badge' }, ['No image'])
-        ]),
-        el('td', {}, [String(sku)]),
-        el('td', {}, [String(title)]),
-        el('td', {}, [String(brand)]),
-        el('td', {}, [String(variant)]),
-        el('td', {}, [String(retailing)]),
-        el('td', {}, [currency(price)]),
-      ]);
-      tbody.appendChild(tr);
+      grid.appendChild(makeCard(row));
       shown++;
     }
     countEl.textContent = `${shown} item${shown === 1 ? '' : 's'}`;
